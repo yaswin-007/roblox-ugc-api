@@ -10,13 +10,15 @@ app.get("/ugc", async (_req, res) => {
       "https://catalog.roblox.com/v1/search/items/details?Category=11&SortType=3&Limit=25"
     );
     const raw = await response.json();
-    const items = raw.data.map(i => ({
+
+    const items = raw.data.map((i) => ({
       id: i.id,
       name: i.name,
       price: i.price,
       creator: i.creatorName,
-      thumbnail: i.thumbnailImage?.imageUrl
+      thumbnail: i.thumbnailImage?.imageUrl || null,
     }));
+
     res.json(items);
   } catch (err) {
     console.error(err);
@@ -25,4 +27,3 @@ app.get("/ugc", async (_req, res) => {
 });
 
 app.listen(PORT, () => console.log(`UGC API running on port ${PORT}`));
-
