@@ -2,10 +2,13 @@
   "name": "roblox-ugc-api",
   "version": "1.0.0",
   "type": "module",
-  "dependencies": {
-    "express": "^4.19.2",
-    "node-fetch": "^3.3.2"
+  "description": "Simple API to fetch Roblox UGC items",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
   },
-"scripts": {
-  "start": "node index.js"
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
 }
